@@ -59,7 +59,7 @@ const Dashboard = () => {
         quantity: editingProduct.quantity,
         price: editingProduct.price
       });
-      toast.success("Product edited successfully ✅");
+      toast.success("Product updated successfully ✅");
       showproduct();
       seteditingProduct(null);
     } catch (err) {
@@ -111,7 +111,7 @@ const Dashboard = () => {
     fetchCounts()
     showproduct()
 
-  }, [])
+  },)
 
 
 

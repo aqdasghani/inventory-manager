@@ -3,7 +3,7 @@ import asyncHandler from 'express-async-handler';
 import Invoice from '../models/Invoice.js';
 
 export const createInvoice = asyncHandler(async (req, res) => {
-  console.log('🔥 req.body =', JSON.stringify(req.body, null, 2));
+
   
   const { customerName, items, totalAmount } = req.body;
 

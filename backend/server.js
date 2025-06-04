@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import 'dotenv/config'
 
 import invoiceRoutes from './routes/invoiceRoutes.js';
 import productRoutes from './routes/productRoutes.js'
@@ -29,12 +30,13 @@ app.get('/', (req, res) => {
 
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/appdata', {
-  })
+.connect(process.env.MONGO_URI, {
+ 
+})
   .then(() => {
-    console.log('✅ MongoDB connected locally');
+  
     app.listen(5000, () => console.log('🚀 Server running on port 5000'));
   })
   .catch((err) => {
-    console.error('❌ MongoDB connection failed:', err.message);
+    
   });
